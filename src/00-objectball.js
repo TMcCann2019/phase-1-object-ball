@@ -1,3 +1,6 @@
+const game = gameObject()
+const teams = Object.values(game)
+
 function gameObject() {
     return {
     home: {
@@ -113,4 +116,41 @@ function gameObject() {
       }
     }
     }
+  }
+
+  function allPlayersObject(){
+    return {...gameObject.home.players, ...gameObject.away.players}
+  }
+
+  function playerStats(playerName){
+    const allPlayers = allPlayersObject()
+    return allPlayers[playerName]
+  }
+
+  function numPointsScored(playerName){
+    return playerStats(playerName).points
+  }
+
+  function shoeSize(playerName){
+    return playerStats(playerName).shoe
+  }
+
+  function findByTeamname(teamName){
+    return teams.find(teamObj) => teamObj.teamName === teamName)
+  }
+
+  function teamColors(teamName){
+
+  }
+
+  function teamNames() {
+
+  }
+
+  function playerNumbers(teamName){
+
+  }
+
+  function bigShoeRebounds(){
+    
   }
